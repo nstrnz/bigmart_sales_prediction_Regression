@@ -107,14 +107,16 @@ plt.show()
 
 ## 2-2 Features Importance
 # create and fit the Linear Regression model
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 model = LinearRegression()
-model.fit(X, y)
+model.fit(X_train, y_train)
 
 # access feature importance insights(coefficients)
-features_label = X.columns
-importances = pd.Series(model.coef_, index = X.columns)
+features_label = X_train.columns
+importances = pd.Series(model.coef_, index = X_train.columns)
 indices = np.argsort(importances)[::-1]
-for i in range(X.shape[1]):
+for i in range(X_train.shape[1]):
     print ("%2d) %-*s %f" % (i + 1, 30, features_label[i], importances[indices[i]]))
     
 # visualize feature importance (optional)
