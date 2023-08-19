@@ -76,14 +76,12 @@ sns.boxplot(dataset_sal['Item_Outlet_Sales'])
 plt.title('Item Outlet Sales Distribution after removing outliers')
 
 ## 3-1 Encoging categorical data
-data = pd.get_dummies(dataset, columns = ['Item_Type'])
+from sklearn.preprocessing import OneHotEncoder
+import pandas as pd
 
-le = LabelEncoder()
-
-cat_col = ['Item_Fat_Content', 'Outlet_Size', 'Outlet_Location_Type', 'Outlet_Type']
-
-for col in cat_col:
-    data[col] = le.fit_transform(dataset[col])
+cat_col = ['Item_Fat_Content', 'Outlet_Size', 'Outlet_Location_Type', 'Outlet_Type','Item_Type']
+data_encoded = pd.get_dummies(dataset, columns=cat_col)
+data_encoded.head()
 
 ## 4-1 Normalizing
 # Data inputs
