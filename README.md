@@ -11,3 +11,7 @@ The Cross-Validation technique is also used for tuning hyperparameters.
 
 # Dataset
 The dataset bigmart.csv, is a file containing sales data from a range of Bigmart retail stores in which certain attributes of each product and store have been defined.
+
+# Contributing
+https://github.com/nstrnzandi
+https://github.com/MaryamSaharkhan
